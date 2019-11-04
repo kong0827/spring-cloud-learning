@@ -1,0 +1,7 @@
+server:
+  port: 8000
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://localhost:6003/eureka
