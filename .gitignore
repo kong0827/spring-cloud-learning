@@ -1,0 +1,45 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/redissonSingle
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+/mvnw
+/mvnw.cmd
+/.mvn/
+
+application-local.*
+/config/after-sales/config-cache/after-sales+default+application.properties
+/config/after-sales/config-cache/
+cd
+config/ApolloNoAppIdPlaceHolder/
+config/after-sales/config-cache/after-sales+default+eureka.properties
+config/after-sales/config-cache/after-sales+default+spring.properties
+logs/
+/logs/
+!/src/main/resources/application-local.properties
