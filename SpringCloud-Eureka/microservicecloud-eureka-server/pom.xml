@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.kxj.springcloud</groupId>
-    <artifactId>microservicecloud-eureka-server</artifactId>
+    <artifactId>micro-service-cloud-eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-eureka-server</name>
+    <name>micro-service-cloud-eureka-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

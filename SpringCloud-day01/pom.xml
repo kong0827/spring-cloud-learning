@@ -3,13 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kxj.springcloud</groupId>
-    <artifactId>microservicecloud</artifactId>
+    <artifactId>micro-service-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>microservicecloud-api</module>
-        <module>microservicecloud-provider-dept-8001</module>
-        <module>microservicecloud-consumer-dept-80</module>
-        <module>microservicecloud-eureka-7001</module>
+        <module>micro-service-cloud-api</module>
+        <module>micro-service-cloud-provider-dept-8001</module>
+        <module>micro-service-cloud-consumer-dept-80</module>
+        <module>micro-service-cloud-eureka-7001</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -75,7 +75,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>microservicecloud</finalName>
+        <finalName>micro-service-cloud</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

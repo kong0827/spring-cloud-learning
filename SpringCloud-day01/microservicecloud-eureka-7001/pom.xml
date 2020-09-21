@@ -4,11 +4,11 @@
 
     <parent>
         <groupId>com.kxj.springcloud</groupId>
-        <artifactId>microservicecloud</artifactId>
+        <artifactId>micro-service-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>microservicecloud-eureka-7001</artifactId>
+    <artifactId>micro-service-cloud-eureka-7001</artifactId>
 
     <dependencies>
         <!--eureka-server服务端 -->

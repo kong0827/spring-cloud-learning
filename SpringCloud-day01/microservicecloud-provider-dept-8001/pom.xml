@@ -4,16 +4,16 @@
 
     <parent>
         <groupId>com.kxj.springcloud</groupId>
-        <artifactId>microservicecloud</artifactId>
+        <artifactId>micro-service-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>microservicecloud-provider-dept-8001</artifactId>
+    <artifactId>micro-service-cloud-provider-dept-8001</artifactId>
 
     <dependencies>
         <dependency><!-- 引入自己定义的api通用包，可以使用Dept部门Entity -->
             <groupId>com.kxj.springcloud</groupId>
-            <artifactId>microservicecloud-api</artifactId>
+            <artifactId>micro-service-cloud-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>

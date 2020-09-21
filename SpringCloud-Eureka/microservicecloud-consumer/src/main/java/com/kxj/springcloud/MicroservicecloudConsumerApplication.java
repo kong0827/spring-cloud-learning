@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 
 @SpringBootApplication
-public class MicroservicecloudConsumerApplication {
+public class MicroServiceCloudConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MicroservicecloudConsumerApplication.class, args);
+        SpringApplication.run(MicroServiceCloudConsumerApplication.class, args);
     }
 
 }

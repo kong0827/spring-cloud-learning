@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.kxj.springcloud</groupId>
-    <artifactId>microservicecloud-api</artifactId>
+    <artifactId>micro-service-cloud-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-api</name>
+    <name>micro-service-cloud-api</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

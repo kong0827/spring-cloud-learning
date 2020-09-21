@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.kxj.springcloud</groupId>
-    <artifactId>microservicecloud-consumer</artifactId>
+    <artifactId>micro-service-cloud-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>microservicecloud-consumer</name>
+    <name>micro-service-cloud-consumer</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -22,7 +22,7 @@
 
         <dependency>
             <groupId>com.kxj.springcloud</groupId>
-            <artifactId>microservicecloud-api</artifactId>
+            <artifactId>micro-service-cloud-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

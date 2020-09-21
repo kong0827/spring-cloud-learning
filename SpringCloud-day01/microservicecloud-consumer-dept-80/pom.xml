@@ -4,17 +4,17 @@
 
     <parent>
         <groupId>com.kxj.springcloud</groupId>
-        <artifactId>microservicecloud</artifactId>
+        <artifactId>micro-service-cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>microservicecloud-consumer-dept-80</artifactId>
+    <artifactId>micro-service-cloud-consumer-dept-80</artifactId>
     <description>部门微服务消费者</description>
 
     <dependencies>
         <dependency><!-- 自己定义的api -->
             <groupId>com.kxj.springcloud</groupId>
-            <artifactId>microservicecloud-api</artifactId>
+            <artifactId>micro-service-cloud-api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
