@@ -5,8 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kxj</groupId>
-    <artifactId>micro-service-cloud-eureka-server-8001</artifactId>
+    <artifactId>micro-service-cloud-eureka-provider-8082</artifactId>
     <version>1.0-SNAPSHOT</version>
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -37,5 +38,4 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
-
 </project>
