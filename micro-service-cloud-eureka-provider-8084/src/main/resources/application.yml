@@ -1,0 +1,10 @@
+server:
+  port: 8084
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka  #  配置eureka服务器
+
+spring:
+  application:
+    name: eureka-provider-8082
