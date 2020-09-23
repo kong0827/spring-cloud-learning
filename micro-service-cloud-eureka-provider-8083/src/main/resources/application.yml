@@ -7,4 +7,4 @@ eureka:
 
 spring:
   application:
-    name: eureka-provider-8082
+    name: eureka-provider
