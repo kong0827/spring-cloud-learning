@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.kxj</groupId>
-    <artifactId>micro-service-cloud-ribbon-consumer-8090</artifactId>
+    <groupId>org.example</groupId>
+    <artifactId>micro-service-cloud-feign-consumer-8070</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>
@@ -35,6 +35,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 
