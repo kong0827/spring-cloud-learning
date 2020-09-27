@@ -9,13 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>micro-service-cloud-eureka-server-8001</artifactId>
-
+    <artifactId>micro-service-cloud-eureka-client-8090</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

@@ -1,11 +1,13 @@
 server:
-  port: 8081
-
+  port: 8001
 eureka:
   instance:
-    hostname: localhost # eureka实例的名称
+    hostname: localhost
   client:
-    register-with-eureka: false # false表示不向注册中心注册自己
-    fetch-registry: false # false表示自己端就是注册中心，职责就是维护服务实例，并不需要去检索服务
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      defaltZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: eureka-server-8001

@@ -10,45 +10,42 @@
 
 #### 1、Spring Cloud版本管理
 
-```xml
- <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring.cloud-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-```
-
-#### 2、新建项目添加依赖
+在父项目中加入统一的版本管理
 
 ```xml
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.1.12.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
-</parent>
-
-<properties>
-    <spring.cloud-version>Greenwich.SR5</spring.cloud-version>
-</properties>
-
 <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-dependencies</artifactId>
-            <version>${spring.cloud-version}</version>
+            <version>Hoxton.SR1</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>2.2.1.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+     </dependencies>
 </dependencyManagement>
+```
+
+#### 2、新建Spring Boot项目添加依赖
+
+`Eureka` 服务注册中心也是机遇Spring Boot为基础搭建的微服务。
+
+```xml
+<parent>
+    <artifactId>SpringCloud-Eureka</artifactId>
+    <groupId>com.kxj.springcloud</groupId>
+    <version>1.0-SNAPSHOT</version>
+</parent>
+
+<modelVersion>4.0.0</modelVersion>
+<artifactId>micro-service-cloud-eureka-server-8001</artifactId>
 
 <dependencies>
     <dependency>
@@ -69,7 +66,7 @@
 
 ```yml
 server:
-  port: 8081
+  port: 8001
 
 eureka:
   instance:
@@ -80,6 +77,10 @@ eureka:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
 ```
+
+- `defaultZone`: 属性区分大小写，并且需要使用驼峰式大小写，因为`ServiceUrl` 属性是`Map<String, String>`
+
+  ![1601220208925](E:\githubResp\SpringCloud\doc\iamges\1601220208925.png)
 
 #### 4、配置启动类
 
@@ -107,25 +108,40 @@ public class EurekaServerApplication {
 #### 1、新建项目添加依赖
 
 ```xml
-<dependency>
-   <groupId>org.springframework.cloud</groupId>
-   <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-</dependency>
+ <parent>
+     <artifactId>SpringCloud-Eureka</artifactId>
+     <groupId>com.kxj.springcloud</groupId>
+     <version>1.0-SNAPSHOT</version>
+</parent>
+<modelVersion>4.0.0</modelVersion>
+
+<artifactId>micro-service-cloud-eureka-client-8090</artifactId>
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+</dependencies>
 ```
 
 #### 2、修改配置文件
 
 ```yml
 server:
-  port: 8082
+  port: 8090
 eureka:
   client:
+    fetch-registry: false
     service-url:
-      defaultZone: http://localhost:8081/eureka  #  配置eureka服务器
-
+      defaultZone: http://localhost:8001/eureka
 spring:
   application:
-    name: eureka-provider-8082
+    name: eurka-client-8090
 ```
 
 #### 3、配置启动类
@@ -134,11 +150,18 @@ spring:
 
 ```java
 @SpringBootApplication
-@EnableEurekaClient  // eureka服务端
-public class EurekaProviderApplication {
+@EnableEurekaClient
+public class MicroServiceCloudEurekaClient8090 {
     public static void main(String[] args) {
-        SpringApplication.run(EurekaProviderApplication.class, args);
+        SpringApplication.run(MicroServiceCloudEurekaClient8090.class, args);
     }
 }
 ```
+
+#### 4、启动测试
+
+1. 先启动`Eureka Server` ，然后启动客户端
+2. 访问` http://localhost:8001/ `
+
+![1601221216625](E:\githubResp\SpringCloud\doc\iamges\1601221216625.png)
 
