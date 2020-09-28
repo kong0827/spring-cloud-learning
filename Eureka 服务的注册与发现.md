@@ -57,7 +57,7 @@
 
 - 注册`Spring Boot`的版本与`Spring Cloud`的版本需对应 	
 
-![1600959584551](E:\githubResp\SpringCloud\doc\iamges\1600959584551.png)
+![1600959584551](.\doc\iamges\1600959584551.png)
 
 -  在Spring Boot 1.0版本引入的包是`spring-cloud-starter-eureka`，在`Spring Boot 2.0`版本中不再使用，使用`spring-cloud-starter-netflix-eureka-server`
 - 在项目中进行了版本管理，子项目不需要写版本号
@@ -80,7 +80,7 @@ eureka:
 
 - `defaultZone`: 属性区分大小写，并且需要使用驼峰式大小写，因为`ServiceUrl` 属性是`Map<String, String>`
 
-  ![1601220208925](E:\githubResp\SpringCloud\doc\iamges\1601220208925.png)
+  ![1601220208925](.\doc\iamges\1601220208925.png)
 
 #### 4、配置启动类
 
@@ -99,7 +99,7 @@ public class EurekaServerApplication {
 
 访问配置的`Eureka` 服务的地址，http://localhost:8001
 
-![1600960337980](E:\githubResp\SpringCloud\doc\iamges\1600960337980.png)
+![1600960337980](.\doc\iamges\1600960337980.png)
 
 
 
@@ -163,5 +163,5 @@ public class MicroServiceCloudEurekaClient8090 {
 1. 先启动`Eureka Server` ，然后启动客户端
 2. 访问` http://localhost:8001/ `
 
-![1601221216625](E:\githubResp\SpringCloud\doc\iamges\1601221216625.png)
+![1601221216625](.\doc\iamges\1601221216625.png)
 
