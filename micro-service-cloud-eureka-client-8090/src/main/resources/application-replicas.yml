@@ -1,0 +1,12 @@
+server:
+  port: 8090
+eureka:
+  client:
+    fetch-registry: false
+    #将自己注册到注册中心
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server-8002:8002/eureka/, http://eureka-server-8001:8001/eureka/
+spring:
+  application:
+    name: eurka-client-8090

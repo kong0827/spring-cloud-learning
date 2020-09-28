@@ -1,0 +1,13 @@
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: eureka-server-8002
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server-8001:8001/eureka/ #注册到另一个Eureka注册中心
+spring:
+  application:
+    name: eureka-server-8002
