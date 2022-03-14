@@ -10,6 +10,7 @@
     <modules>
         <module>micro-service-cloud-eureka-server-8001</module>
         <module>micro-service-cloud-eureka-client-8090</module>
+        <module>open-feign</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -28,7 +29,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
+                <version>Hoxton.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
