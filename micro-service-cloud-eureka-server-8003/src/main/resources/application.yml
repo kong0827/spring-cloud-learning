@@ -1,0 +1,21 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /eureka
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: eureka8003
+    health-check-url: http://${eureka.instance.hostname}:${server.port}/${server.servlet.context-path}/actuator/health
+  client:
+    #从其他两个实例同步服务注册信息
+    fetch-registry: true
+    #向其他eureka注册当前eureka实例
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka8001:8001/eureka/eureka/,http://eureka8002:8002/eureka/eureka/
+
+
+

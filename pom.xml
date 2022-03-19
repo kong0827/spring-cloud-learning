@@ -5,23 +5,34 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kxj.springcloud</groupId>
-    <artifactId>SpringCloud-Eureka</artifactId>
+    <artifactId>spring-cloud-learning</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>micro-service-cloud-eureka-server-8001</module>
+        <module>micro-service-cloud-eureka-server-8002</module>
+        <module>micro-service-cloud-eureka-server-8003</module>
         <module>micro-service-cloud-eureka-client-8090</module>
         <module>open-feign</module>
     </modules>
     <packaging>pom</packaging>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.3.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
 
     <properties>
+        <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
+        <spring-boot-docs-version>2.3.3.RELEASE</spring-boot-docs-version>
     </properties>
 
     <dependencyManagement>
@@ -29,14 +40,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR3</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.1.RELEASE</version>
+                <version>${spring.cloud-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

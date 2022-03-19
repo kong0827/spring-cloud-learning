@@ -6,7 +6,8 @@ eureka:
     #将自己注册到注册中心
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8001/eureka
+      defaultZone: http://eureka8001:8001/eureka/eureka/,http://eureka8003:8003/eureka/eureka/,http://eureka8002:8002/eureka/eureka/
+#      注意：这里是两个eureka，我没写错。这里的url取决于eureka服务注册中心的配置
 spring:
   application:
     name: eurka-client-8090

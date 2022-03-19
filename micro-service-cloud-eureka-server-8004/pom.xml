@@ -9,13 +9,19 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>micro-service-cloud-eureka-server-8001</artifactId>
+    <artifactId>micro-service-cloud-eureka-server-8002</artifactId>
 
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+      <!--、spring-boot-starter-actuator是为Spring Boot服务提供相关监控信息的包。因为我们的eureka server要互相注册
+      、并检查彼此的健康状态，所以这个包必须带上。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
     </dependencies>
 
