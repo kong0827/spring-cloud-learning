@@ -12,7 +12,7 @@
         <module>micro-service-cloud-eureka-server-8002</module>
         <module>micro-service-cloud-eureka-server-8003</module>
         <module>micro-service-cloud-eureka-client-8090</module>
-        <module>open-feign</module>
+        <module>micro-service-cloud-open-feign-8091</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -46,6 +46,20 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!--、spring-boot-starter-actuator是为Spring Boot服务提供相关监控信息的包。因为我们的eureka server要互相注册
+               并检查彼此的健康状态，所以这个包必须带上。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
