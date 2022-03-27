@@ -5,26 +5,26 @@ server:
 spring:
   application:
     name: eureka-server
-#eureka:
-#  instance:
-#    hostname: eureka-server-8001
-#  client:
-#    #是否从其他实例获取服务注册信息，因为这是一个单节点的EurekaServer，不需要同步其他的EurekaServer节点的数据，所以设置为false；
-#    fetch-registry: false
-#    #表示是否向eureka注册服务，即在自己的eureka中注册自己，默认为true，此处应该设置为false；
-#    register-with-eureka: false
-#    service-url:
-#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 eureka:
   instance:
-    hostname: eureka8001
-    health-check-url: http://${eureka.instance.hostname}:${server.port}/${server.servlet.context-path}/actuator/health
+    hostname: eureka-server-8001
   client:
-    #从其他两个实例同步服务注册信息
-    fetch-registry: true
-    #向其他eureka注册当前eureka实例
-    register-with-eureka: true
+    #是否从其他实例获取服务注册信息，因为这是一个单节点的EurekaServer，不需要同步其他的EurekaServer节点的数据，所以设置为false；
+    fetch-registry: false
+    #表示是否向eureka注册服务，即在自己的eureka中注册自己，默认为true，此处应该设置为false；
+    register-with-eureka: false
     service-url:
-      defaultZone: http://eureka8003:8003/eureka/eureka/,http://eureka8002:8002/eureka/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#eureka:
+#  instance:
+#    hostname: eureka8001
+#    health-check-url: http://${eureka.instance.hostname}:${server.port}/${server.servlet.context-path}/actuator/health
+#  client:
+#    #从其他两个实例同步服务注册信息
+#    fetch-registry: true
+#    #向其他eureka注册当前eureka实例
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://eureka8003:8003/eureka/eureka/,http://eureka8002:8002/eureka/eureka/
 
 

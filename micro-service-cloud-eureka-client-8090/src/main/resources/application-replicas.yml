@@ -9,4 +9,4 @@ eureka:
       defaultZone: http://eureka-server-8002:8002/eureka/, http://eureka-server-8001:8001/eureka/
 spring:
   application:
-    name: eurka-client-8090
+    name: eureka-client-8090

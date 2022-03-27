@@ -155,7 +155,7 @@ eureka:
 #      注意：这里是两个eureka，我没写错。这里的url取决于eureka服务注册中心的配置
 spring:
   application:
-    name: eurka-client-8090
+    name: eureka-client-8090
 #spring:
 #  profiles:
 #    active: replicas
