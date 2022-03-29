@@ -2,7 +2,7 @@ server:
   port: 8091
 eureka:
   client:
-    fetch-registry: false
+    fetch-registry: true
     #将自己注册到注册中心
     register-with-eureka: true
     service-url:
