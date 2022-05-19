@@ -2,7 +2,7 @@
 
 ### 简介
 
-![img](https://gitee.com/kongxiangjin/images/raw/master/img/86ee6b94cd1551cce34ea0b02357bc15_918x564.png)
+![img](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/86ee6b94cd1551cce34ea0b02357bc15_918x564.png)
 
 ​     `Spring Cloud Eureka`来实现服务治理。
 
@@ -88,7 +88,7 @@ eureka:
 
 - `defaultZone`: 属性区分大小写，并且需要使用驼峰式大小写，因为`ServiceUrl` 属性是`Map<String, String>`
 
-  ![1601220208925](https://gitee.com/kongxiangjin/images/raw/master/img/1601220208925.png)
+  ![1601220208925](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/1601220208925.png)
 
 #### 4、配置启动类注解
 
@@ -110,7 +110,7 @@ public class MicroServiceCloudEurekaServerApplication8001 {
 
 若没有配置context-path，则直接访问http://localhost:8001
 
-![1600960337980](https://gitee.com/kongxiangjin/images/raw/master/img/1600960337980.png)
+![1600960337980](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/1600960337980.png)
 
 
 
@@ -181,11 +181,11 @@ public class MicroServiceCloudEurekaClient8090 {
 1. 先启动`Eureka Server` ，然后启动客户端
 2. 访问` http://localhost:8001/ `
 
-![1601221216625](https://gitee.com/kongxiangjin/images/raw/master/img/1601221216625.png)
+![1601221216625](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/1601221216625.png)
 
 #### 常见bug
 
-![img](https://gitee.com/kongxiangjin/images/raw/master/img/1601d9a364fc23a8eba5d5603293a410_1683x345.png)
+![img](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/1601d9a364fc23a8eba5d5603293a410_1683x345.png)
 
 - 碰上这个报错，第一时间要取检查defaultZone配置的Url是否正确
 - 其次，要保证启动顺序，服务注册中心先启动，微服务后启动
@@ -308,14 +308,14 @@ spring-boot-starter-actuator是为Spring Boot服务提供相关监控信息的�
 
 
 
-![image-20220320020119802](https://gitee.com/kongxiangjin/images/raw/master/img/image-20220320020119802.png)
+![image-20220320020119802](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/image-20220320020119802.png)
 
 
 
 #### 其他需要注意的点：
 
 出现 unavailable-replicas 问题，首先要去检查一下你的health-check-url是否能正常响应。如果没有设置context-path,默认是：`http://ip:端口/actuator/health`。UP状态表示处于可用状态。
-![image-20220320231323712](https://gitee.com/kongxiangjin/images/raw/master/img/image-20220320231323712.png)
+![image-20220320231323712](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/image-20220320231323712.png)
 
 如果健康检查没有问题：
 1.是否开启了register-with-eureka=true和fetch-registry=true
@@ -387,7 +387,7 @@ http://kxj0827:centerpwd@eureka8001:8001/eureka/eureka/,http://kxj0827:centerpwd
 
 ### Eureka的健康检查
 
-![image-20220320234214607](https://gitee.com/kongxiangjin/images/raw/master/img/image-20220320234214607.png)
+![image-20220320234214607](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/image-20220320234214607.png)
 
 - 在Status栏显示着UP，表示该服务及其多实例处于状态正常。其它取值DOWN、OUT_OF_SERVICE、UNKNOWN等均表示该服务处于不可被请求的状态，只有UP状态的微服务会被请求。
 - 由于Eureka Server与Eureka Client之间使用心跳机制来确定Eureka Client（微服务实例）的状态。也就是说，当服务器端与客户端的心跳保持正常，服务的状态就会始终保持“UP”状态。所以说该UP状态不能完全说明该服务可以正常响应HTTP请求，只能说明Eureka Server与Eureka Client之间存在正常心跳。
