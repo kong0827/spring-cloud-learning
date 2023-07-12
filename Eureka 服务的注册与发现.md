@@ -2,7 +2,7 @@
 
 ### 简介
 
-![img](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/86ee6b94cd1551cce34ea0b02357bc15_918x564.png)
+![img](https://kong-blog.oss-cn-shanghai.aliyuncs.com/86ee6b94cd1551cce34ea0b02357bc15_918x564-20230712140035380-20230712140040178.png)
 
 ​     `Spring Cloud Eureka`来实现服务治理。
 
@@ -110,7 +110,7 @@ public class MicroServiceCloudEurekaServerApplication8001 {
 
 若没有配置context-path，则直接访问http://localhost:8001
 
-![1600960337980](https://kong-blog.oss-cn-shanghai.aliyuncs.com/img/1600960337980.png)
+![1600960337980](https://kong-blog.oss-cn-shanghai.aliyuncs.com/1600960337980.png)
 
 
 
@@ -292,6 +292,34 @@ hosts，加配置
 在eureka集群搭建过程中，fetch-registry和register-with-eureka一定设置为true
 
 很多人写的垃圾东西，搭建过程遇到各种报错之后，就将fetch-registry和register-with-eureka的值改成false，来解决问题。这两个值之所以设置为true，目的是让eureka集群之间实现互相注册，互相心跳健康状态，从而达到集群的高可用
+
+
+
+#### 注意事项
+
+需要保证 eureka.instance.hostname eureka服务的实例名称在集群中保证唯一。
+
+需要保证 eureka.client.service-url.defaultZone 的主机名（或IP）要唯一。如果是 Eureka 集群在同一个主机上时（学习和开发时），通过配置 hosts ，保证主机名的唯一。
+
+win10 环境修改，在 C:\Windows\System32\drivers\etc 的 hosts 文件修改：
+
+127.0.0.1  eureka7001.com
+127.0.0.1  eureka7002.com
+127.0.0.1  eureka7003.com
+
+##### 错误配置示例
+示例2
+eureka.instance.hostname 实例名称在集群中保证唯一，但是 defaultZone 的主机名称不是唯一的。
+
+尽管端号是不同的，Eureka Server可以正常启动，但是无法组合成集群。
+
+![在这里插入图片描述](https://kong-blog.oss-cn-shanghai.aliyuncs.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaW4yMWNlbg==,size_16,color_FFFFFF,t_70-20230712144545885.png)
+
+造成的结果的，只有备分一个主机：
+
+![在这里插入图片描述](https://kong-blog.oss-cn-shanghai.aliyuncs.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9qaW4yMWNlbg==,size_16,color_FFFFFF,t_70.png)
+
+
 
 
 
